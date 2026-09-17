@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Регистрация ГБО4.РФ в Стерлитамаке — оформление ГБО и переоборудования ТС в ГИБДД</title>
-<meta name="description" content="Регистрация ГБО и переоборудования ТС в ГИБДД в Стерлитамаке. Все виды изменений конструкции. Полный пакет документов под ключ. Законно, безопасно, надёжно. Тел: 8 (987) 133-40-50">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a75d1'/%3E%3Cstop offset='1' stop-color='%236cb52d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M24 2c1 6 4 9 7 13 3.5 4.6 6 8.6 6 13.5C37 36.5 31.2 42 24 42S11 36.5 11 28.5c0-4.9 2.5-8.9 6-13.5 3-4 6-7 7-13z'/%3E%3C/svg%3E">
+<meta name="description" content="Регистрация ГБО и переоборудования ТС в ГИБДД в Стерлитамаке. Все виды изменений конструкции. Полный пакет документов для регистрации: декларация, протоколы, заключения. Законно, безопасно, надёжно. Тел: 8 (987) 133-40-50">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Cpath%20fill='%230d3b74'%20d='M24%204C18%2016%2010%2024%2010%2032c0%208%206%2013%2014%2014-6-4-9-9-9-15%200-8%205-15%209-27z'/%3E%3Cpath%20fill='%236cb52d'%20d='M26%208c4%2010%2012%2016%2012%2024%200%208-6%2013-14%2014%206-4%209-9%209-15%200-8-4-13-7-23z'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/oswald@latest/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/index.css">
 <script>document.documentElement.className='js';</script>
@@ -27,7 +27,7 @@ button{font-family:inherit}
 .overline{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark)}
 .overline::before{content:"";width:26px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--blue-500),var(--green))}
 h2.title{font-size:clamp(26px,3.4vw,38px);text-transform:uppercase;letter-spacing:.01em;line-height:1.15;margin:10px 0 12px;color:var(--blue-900)}
-.section-sub{color:var(--muted);max-width:640px;font-size:16.5px}
+.section-sub{color:var(--muted);max-width:680px;font-size:16.5px}
 .bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--bg);pointer-events:none}
 .par{position:absolute;inset:0;will-change:transform}
 .blob{position:absolute;border-radius:50%}
@@ -51,6 +51,8 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdro
 header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(13,60,110,.08)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:var(--header-h)}
 .logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo-img{height:56px;width:auto;max-width:40vw}
+.logo-fallback{display:none;align-items:center;gap:12px}
 .logo-txt{font-size:26px;font-weight:700;color:var(--blue-800);line-height:1}
 .logo-txt span{color:var(--green-dark)}
 .logo-sub{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
@@ -70,42 +72,28 @@ header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(13,60
 body.menu-open .burger span{background:transparent}
 body.menu-open .burger span::before{transform:rotate(45deg);top:0}
 body.menu-open .burger span::after{transform:rotate(-45deg);top:0}
-/* ===== HERO + видео-фон (бесшовный loop) ===== */
+/* ===== HERO + фон-превью (машина ↔ документы, бесшовный loop) =====
+   Оставить одну сцену: только машина → .hb-b{display:none}; только документы → .hb-a{display:none} */
 .hero{position:relative;padding:96px 0 78px;overflow:hidden}
-.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#e9eff6}
-.hv-svg{width:100%;height:100%;transition:opacity .6s}
-.hv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;visibility:hidden}
-.hero-video.has-video .hv-video{visibility:visible}
-.hero-video.has-video #hvA{opacity:1}
-.hero-video.has-video .hv-svg{opacity:0}
-.hv-cam,.cat-bob,.cat-bob2,.blink,.blink2,.tail1,.tail2,.wave,.papers,.spark{transform-box:fill-box;transform-origin:center}
-.hv-cam{animation:hvCam 26s ease-in-out infinite alternate}
-@keyframes hvCam{from{transform:translate3d(-1.2%,0,0) scale(1.06)}to{transform:translate3d(1.2%,0,0) scale(1.12)}}
-.cat-bob{animation:hvBob 3.2s ease-in-out infinite alternate}
-.cat-bob2{animation:hvBob 3.8s ease-in-out .4s infinite alternate}
-@keyframes hvBob{from{transform:translateY(0)}to{transform:translateY(7px)}}
-.blink{animation:hvBlink 5.2s infinite}
-.blink2{animation:hvBlink 6.1s 1.1s infinite}
-@keyframes hvBlink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}}
-.tail1{transform-origin:100% 100%;animation:hvTail 3.6s ease-in-out infinite alternate}
-.tail2{transform-origin:0% 100%;animation:hvTail 4.2s .8s ease-in-out infinite alternate}
-@keyframes hvTail{from{transform:rotate(-7deg)}to{transform:rotate(9deg)}}
-.wave{transform-origin:0% 100%;animation:hvWave 1.6s ease-in-out infinite alternate}
-@keyframes hvWave{from{transform:rotate(-6deg)}to{transform:rotate(16deg)}}
-.papers{animation:hvPapers 2.8s ease-in-out infinite alternate}
-@keyframes hvPapers{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
-.spark{animation:hvSpark 6s ease-in-out infinite alternate}
-@keyframes hvSpark{from{transform:translateY(0);opacity:.25}to{transform:translateY(-26px);opacity:.7}}
-.hv-overlay{position:absolute;inset:0;background:radial-gradient(640px 320px at 50% 42%,rgba(255,255,255,.38),rgba(255,255,255,0) 70%),linear-gradient(180deg,rgba(245,248,252,.94) 0%,rgba(245,248,252,.84) 45%,rgba(245,248,252,.96) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:linear-gradient(180deg,#f2f7fd,#e8eff8)}
+.hb-slide{position:absolute;inset:0;opacity:0;animation:hbFade 20s linear infinite}
+.hb-slide svg{width:100%;height:100%;animation:hbDrift 20s ease-in-out infinite}
+.hb-b{animation-delay:10s}
+.hb-b svg{animation-delay:10s}
+@keyframes hbFade{0%{opacity:0}5%{opacity:1}45%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes hbDrift{0%{transform:scale(1.02)}45%{transform:scale(1.09)}100%{transform:scale(1.09)}}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(640px 320px at 50% 42%,rgba(255,255,255,.42),rgba(255,255,255,0) 70%),linear-gradient(180deg,rgba(245,248,252,.93) 0%,rgba(245,248,252,.82) 45%,rgba(245,248,252,.95) 100%)}
 .hero .container{position:relative;z-index:2}
 .hero-inner{max-width:880px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
-.hero-emblem{filter:drop-shadow(0 14px 26px rgba(18,96,174,.28));animation:emblemFloat 6s ease-in-out infinite}
+.hero-logo,.hero-logo-svg{margin-bottom:8px;filter:drop-shadow(0 14px 26px rgba(18,96,174,.22));animation:emblemFloat 6s ease-in-out infinite}
+.hero-logo{height:132px;width:auto;max-width:min(72vw,300px)}
+.hero-logo-svg{display:none;height:150px;width:auto}
 @keyframes emblemFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.badge-city{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue-700);border:1px solid #d5e6fa;padding:8px 16px;border-radius:999px;font-weight:800;font-size:13px;box-shadow:var(--shadow);margin-top:26px}
+.badge-city{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue-700);border:1px solid #d5e6fa;padding:8px 16px;border-radius:999px;font-weight:800;font-size:13px;box-shadow:var(--shadow);margin-top:22px}
 .badge-city i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(108,181,45,.2)}
 h1{font-size:clamp(30px,4.6vw,54px);text-transform:uppercase;line-height:1.12;color:var(--blue-900);margin:18px 0 10px;text-shadow:0 2px 14px rgba(255,255,255,.75)}
 h1 em{font-style:normal;color:var(--green-dark)}
-.hero-sub{color:var(--muted);font-size:17.5px;max-width:600px;margin:0 auto 30px;text-shadow:0 1px 10px rgba(255,255,255,.85)}
+.hero-sub{color:var(--muted);font-size:17.5px;max-width:640px;margin:0 auto 30px;text-shadow:0 1px 10px rgba(255,255,255,.85)}
 .hero-sub b{color:var(--ink)}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:800px;width:100%}
@@ -116,7 +104,7 @@ h1 em{font-style:normal;color:var(--green-dark)}
 .scroll-hint{margin-top:44px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 .scroll-hint svg{animation:hintBounce 1.8s ease-in-out infinite;color:var(--green-dark)}
 @keyframes hintBounce{0%,100%{transform:translateY(0);opacity:.9}50%{transform:translateY(8px);opacity:.4}}
-@media (prefers-reduced-motion: reduce){.hv-cam,.cat-bob,.cat-bob2,.blink,.blink2,.tail1,.tail2,.wave,.papers,.spark,.hero-emblem,.blob{animation:none !important}}
+@media (prefers-reduced-motion: reduce){.hb-slide,.hb-slide svg,.hero-logo,.hero-logo-svg,.blob{animation:none !important}.hb-a{opacity:1}}
 /* ===== sections ===== */
 .cards-6{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 .srv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);transition:.3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
@@ -239,14 +227,33 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .cards-6,.cards-4{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .steps-wrap{padding:44px 24px}.form-row{grid-template-columns:1fr}.form-card{padding:26px}
-  .f-grid{grid-template-columns:1fr}.nav .btn{padding:10px 14px;font-size:13px}.logo-txt{font-size:22px}
+  .f-grid{grid-template-columns:1fr}.nav .btn{padding:10px 14px;font-size:13px}
+  .logo-img{height:44px}.logo-txt{font-size:22px}.hero-logo{height:104px}.hero-logo-svg{height:118px}
 }
 </style>
 </head>
 <body>
 
+<!-- ЛОГОТИП: векторная копия фирменного знака с фото (пламя + машина + пистолет + надпись).
+     Если рядом с index.html лежит фото logo.png — оно автоматически заменит вектор. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="maxg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#40c4f5"/><stop offset=".55" stop-color="#4f6df5"/><stop offset="1" stop-color="#8338f0"/></linearGradient>
+<linearGradient id="lgB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a75d1"/><stop offset="1" stop-color="#0d3b74"/></linearGradient>
+<linearGradient id="lgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8dc63f"/><stop offset="1" stop-color="#4e8f1e"/></linearGradient>
+<linearGradient id="lgC" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d3b74"/><stop offset=".55" stop-color="#1260ae"/><stop offset="1" stop-color="#6cb52d"/></linearGradient>
+<symbol id="logoEmblem" viewBox="0 0 240 240">
+  <path fill="url(#lgB)" d="M118 6C104 44 78 70 62 98 46 126 40 152 46 178 54 210 82 232 118 236 92 222 76 200 74 172 72 142 86 112 106 84 118 66 124 36 118 6Z"/>
+  <path fill="url(#lgG)" d="M132 22C140 52 158 72 172 94 188 118 196 142 194 166 191 200 168 226 134 234 156 218 168 196 168 170 168 140 154 112 136 86 128 72 128 48 132 22Z"/>
+  <path fill="url(#lgG)" opacity=".9" d="M176 96C186 112 192 128 192 146 192 170 180 188 158 196 172 182 178 166 176 148 175 130 172 112 176 96Z"/>
+  <path fill="url(#lgC)" d="M84 150C88 132 102 122 122 122 142 122 156 131 163 143L172 147C180 150 184 156 184 163L184 170 156 170A16 16 0 0 0 124 170L84 170Z"/>
+  <path fill="#fff" opacity=".85" d="M100 140C108 130 118 126 128 126 140 126 150 131 156 140L144 140C138 133 130 131 122 133 114 135 106 138 100 140Z"/>
+  <circle cx="140" cy="170" r="16" fill="#0d3b74"/>
+  <path fill="url(#lgG)" d="M188 128C196 122 206 124 208 132L210 152C211 160 206 166 198 166L194 166 194 156 198 156C200 156 201 154 201 152L199 138C198 134 194 133 191 135L186 138Z"/>
+</symbol>
+<symbol id="logoFull" viewBox="0 0 300 330">
+  <use href="#logoEmblem" width="240" height="240" x="30" y="0"/>
+  <text x="150" y="308" text-anchor="middle" font-family="Oswald, sans-serif" font-size="60" font-weight="700" fill="#0d3b74" letter-spacing="2">ГБО4.РФ</text>
+</symbol>
 <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
 <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.308-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
 <symbol id="i-max" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.6 21.2 5.4 16.4A8.2 8.2 0 1 1 9.2 19.4ZM12 7.9a3.8 3.8 0 1 0 .01 0Z"/></symbol>
@@ -273,12 +280,11 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
 <header id="header">
   <div class="container nav">
     <a class="logo" href="#top" data-scroll aria-label="ГБО4.РФ — на главную">
-      <svg width="46" height="46" viewBox="0 0 48 48" aria-hidden="true">
-        <defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a75d1"/><stop offset=".55" stop-color="#1260ae"/><stop offset="1" stop-color="#6cb52d"/></linearGradient></defs>
-        <path fill="url(#lg1)" d="M24 2c1 6 4 9 7 13 3.5 4.6 6 8.6 6 13.5C37 36.5 31.2 42 24 42S11 36.5 11 28.5c0-4.9 2.5-8.9 6-13.5 3-4 6-7 7-13z"/>
-        <path fill="#fff" d="M33.9 24.6l-1.6-4.4c-.3-.8-1-1.2-1.8-1.2h-13c-.8 0-1.5.4-1.8 1.2l-1.6 4.4c-.7.2-1.1.8-1.1 1.5v4.4c0 .4.3.7.7.7h1.5c.4 0 .7-.3.7-.7v-1h16.2v1c0 .4.3.7.7.7h1.5c.4 0 .7-.3.7-.7v-4.4c0-.7-.4-1.3-1.1-1.5zm-15.2-4.2h10.6l1.2 3.4H17.5l1.2-3.4zm-.2 7.6c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm11 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
-      </svg>
-      <span><span class="logo-txt">ГБО4.<span>РФ</span></span><span class="logo-sub">Стерлитамак</span></span>
+      <img class="logo-img" src="logo.png" alt="ГБО4.РФ" onerror="this.style.display='none';document.getElementById('logoText').style.display='flex';">
+      <span id="logoText" class="logo-fallback">
+        <svg width="46" height="46" viewBox="0 0 240 240" aria-hidden="true"><use href="#logoEmblem" width="240" height="240"/></svg>
+        <span><span class="logo-txt">ГБО4.<span>РФ</span></span><span class="logo-sub">Стерлитамак</span></span>
+      </span>
     </a>
     <nav class="menu" id="menu">
       <a href="#services" data-scroll>Услуги</a>
@@ -297,78 +303,68 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
 
 <main id="top">
 <section class="hero">
-  <!-- ВИДЕО-ФОН: файл cats.mp4 лежит рядом с index.html и зацикливается с плавным стыком. -->
-  <div class="hero-video" aria-hidden="true">
-    <svg class="hv-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-      <g class="hv-cam">
-        <rect width="1600" height="640" fill="#e9eff6"/>
-        <rect y="640" width="1600" height="260" fill="#dde5ee"/>
-        <rect y="634" width="1600" height="8" fill="#cfd9e4"/>
-        <rect x="180" y="36" width="260" height="24" rx="12" fill="#fff" opacity=".9"/>
-        <rect x="670" y="36" width="260" height="24" rx="12" fill="#fff" opacity=".9"/>
-        <rect x="1160" y="36" width="260" height="24" rx="12" fill="#fff" opacity=".9"/>
-        <rect x="90" y="120" width="150" height="200" rx="8" fill="#fff"/><rect x="90" y="120" width="150" height="42" rx="8" fill="#1a75d1"/>
-        <rect x="1360" y="120" width="150" height="200" rx="8" fill="#fff"/><rect x="1360" y="120" width="150" height="42" rx="8" fill="#1a75d1"/>
-        <g fill="#dfe8f2"><rect x="106" y="182" width="118" height="9" rx="4"/><rect x="106" y="202" width="118" height="9" rx="4"/><rect x="106" y="222" width="90" height="9" rx="4"/><rect x="1376" y="182" width="118" height="9" rx="4"/><rect x="1376" y="202" width="118" height="9" rx="4"/><rect x="1376" y="222" width="90" height="9" rx="4"/></g>
-        <rect x="1180" y="300" width="120" height="340" rx="6" fill="#b5905f"/><circle cx="1210" cy="470" r="7" fill="#8a6b40"/>
-        <rect x="60" y="520" width="320" height="16" rx="6" fill="#cfd8e2"/><rect x="84" y="536" width="14" height="120" fill="#b7c2cf"/><rect x="342" y="536" width="14" height="120" fill="#b7c2cf"/>
-        <rect x="150" y="440" width="120" height="72" rx="6" fill="#223447"/><rect x="202" y="512" width="16" height="12" fill="#223447"/>
-        <rect x="1220" y="520" width="320" height="16" rx="6" fill="#cfd8e2"/><rect x="1244" y="536" width="14" height="120" fill="#b7c2cf"/><rect x="1502" y="536" width="14" height="120" fill="#b7c2cf"/>
-        <rect x="1330" y="440" width="120" height="72" rx="6" fill="#223447"/><rect x="1382" y="512" width="16" height="12" fill="#223447"/>
-        <circle class="spark" cx="320" cy="210" r="6" fill="#fff"/>
-        <circle class="spark" cx="1250" cy="250" r="5" fill="#fff" style="animation-delay:1.4s"/>
-        <g transform="translate(560,300)">
-          <path class="tail1" d="M-40 330C-95 320-115 255-82 228" stroke="#e59a54" stroke-width="26" stroke-linecap="round" fill="none"/>
-          <rect x="-70" y="180" width="140" height="190" rx="40" fill="#1d2f4e"/>
-          <rect x="-70" y="298" width="140" height="22" fill="#f4f6f8"/><rect x="-14" y="301" width="28" height="16" rx="4" fill="#d9b24a"/>
-          <path d="M0 190l-10 26 10 58 10-58z" fill="#16233c"/><rect x="18" y="232" width="34" height="13" rx="4" fill="#8c2f39"/>
-          <path d="M64 212c28 30 28 70 6 90" stroke="#1d2f4e" stroke-width="26" stroke-linecap="round" fill="none"/><circle cx="66" cy="306" r="14" fill="#e59a54"/>
-          <g class="papers"><rect x="-104" y="262" width="86" height="58" rx="4" fill="#eef2f7" transform="rotate(-10 -61 291)"/><rect x="-96" y="254" width="86" height="58" rx="4" fill="#fff" transform="rotate(-3 -53 283)"/></g>
-          <path d="M-64 212c-28 30-28 70-6 90" stroke="#1d2f4e" stroke-width="26" stroke-linecap="round" fill="none"/><circle cx="-66" cy="306" r="14" fill="#e59a54"/>
-          <rect x="-52" y="360" width="40" height="62" rx="14" fill="#16233c"/><rect x="12" y="360" width="40" height="62" rx="14" fill="#16233c"/>
-          <ellipse cx="-32" cy="426" rx="26" ry="12" fill="#e59a54"/><ellipse cx="32" cy="426" rx="26" ry="12" fill="#e59a54"/>
-          <g class="cat-bob">
-            <path d="M-58 62L-72 6-22 34Z" fill="#e59a54"/><path d="M58 62L72 6 22 34Z" fill="#e59a54"/>
-            <circle cx="0" cy="110" r="74" fill="#e59a54"/><ellipse cx="0" cy="134" rx="40" ry="29" fill="#fff8f0"/>
-            <g class="blink"><circle cx="-26" cy="102" r="9" fill="#2b2b2b"/><circle cx="26" cy="102" r="9" fill="#2b2b2b"/><circle cx="-23" cy="99" r="3" fill="#fff"/><circle cx="29" cy="99" r="3" fill="#fff"/></g>
-            <path d="M-6 122h12l-6 8z" fill="#e2708a"/><path d="M-6 134q6 8 12 0" stroke="#b98465" stroke-width="3" fill="none"/>
-            <g stroke="#fff" stroke-width="3" opacity=".85"><path d="M-40 124L-84 118"/><path d="M-40 132L-84 136"/><path d="M40 124L84 118"/><path d="M40 132L84 136"/></g>
-            <ellipse cx="0" cy="50" rx="64" ry="14" fill="#10192b"/><path d="M-62 46C-62 8 62 8 62 46Z" fill="#1d2f4e"/><rect x="-62" y="38" width="124" height="14" rx="7" fill="#16233c"/>
-            <circle cx="0" cy="24" r="9" fill="#d9b24a"/><circle cx="0" cy="24" r="4" fill="#8c2f39"/>
+  <!-- Фон-превью: сцена «машина» и сцена «документы» плавно сменяют друг друга (бесшовный цикл) -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hb-slide hb-a">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="carG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d3b74"/><stop offset=".5" stop-color="#1260ae"/><stop offset="1" stop-color="#6cb52d"/></linearGradient>
+          <radialGradient id="glowA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#bcd9f7" stop-opacity=".85"/><stop offset="1" stop-color="#bcd9f7" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="1600" height="900" fill="#f2f7fd"/>
+        <circle cx="800" cy="470" r="430" fill="url(#glowA)"/>
+        <g stroke="#dfe8f2" stroke-width="10" stroke-linecap="round" opacity=".8"><path d="M180 380h240"/><path d="M120 460h180"/><path d="M220 540h140"/></g>
+        <ellipse cx="800" cy="712" rx="520" ry="44" fill="#dde7f2"/>
+        <path fill="url(#carG)" d="M330 640c35-78 118-122 242-132 62-64 152-96 262-96 122 0 212 38 268 100 96 13 166 47 196 118l8 34c0 26-21 42-47 42h-52a86 86 0 0 1-172 0H560a86 86 0 0 1-172 0h-16c-26 0-47-16-47-42z"/>
+        <path fill="#eaf3ff" opacity=".85" d="M560 500c52-48 132-74 232-74 102 0 182 30 234 82l-62 9c-46-37-106-53-172-53-72 0-138 13-184 44z"/>
+        <path fill="#ffffff" opacity=".22" d="M380 600c80-40 240-60 420-60s340 20 420 60l-10 22c-90-34-240-52-410-52s-320 18-410 52z"/>
+        <circle cx="474" cy="640" r="86" fill="#12263f"/><circle cx="474" cy="640" r="40" fill="#8fa6bd"/><circle cx="474" cy="640" r="14" fill="#e8eef5"/>
+        <circle cx="1120" cy="640" r="86" fill="#12263f"/><circle cx="1120" cy="640" r="40" fill="#8fa6bd"/><circle cx="1120" cy="640" r="14" fill="#e8eef5"/>
+        <g fill="#6cb52d"><circle cx="1245" cy="470" r="10" opacity=".5"/><circle cx="1300" cy="430" r="7" opacity=".4"/><circle cx="330" cy="470" r="8" opacity=".4"/></g>
+      </svg>
+    </div>
+    <div class="hb-slide hb-b">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs><radialGradient id="glowB" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d9edc4" stop-opacity=".8"/><stop offset="1" stop-color="#d9edc4" stop-opacity="0"/></radialGradient></defs>
+        <rect width="1600" height="900" fill="#f4f8fc"/>
+        <circle cx="800" cy="450" r="430" fill="url(#glowB)"/>
+        <g transform="rotate(-8 800 450)"><rect x="560" y="180" width="480" height="600" rx="14" fill="#e4ecf5"/></g>
+        <g transform="rotate(4 800 450)">
+          <rect x="580" y="160" width="480" height="620" rx="14" fill="#ffffff" stroke="#dfe8f2" stroke-width="3"/>
+          <rect x="620" y="210" width="400" height="54" rx="10" fill="#1260ae"/>
+          <rect x="620" y="300" width="400" height="14" rx="7" fill="#dfe8f2"/>
+          <rect x="620" y="336" width="360" height="14" rx="7" fill="#dfe8f2"/>
+          <rect x="620" y="372" width="390" height="14" rx="7" fill="#dfe8f2"/>
+          <rect x="620" y="408" width="300" height="14" rx="7" fill="#dfe8f2"/>
+          <g transform="translate(700,560)" opacity=".9">
+            <circle r="64" fill="none" stroke="#1a75d1" stroke-width="6"/>
+            <circle r="44" fill="none" stroke="#1a75d1" stroke-width="3"/>
+            <path d="M-30 0h60M0 -30v60" stroke="#1a75d1" stroke-width="3" opacity=".6"/>
           </g>
+          <path d="M840 560c20-24 34 12 52-8s30 6 46-6" fill="none" stroke="#3b4b5f" stroke-width="5" stroke-linecap="round"/>
+          <rect x="820" y="590" width="160" height="10" rx="5" fill="#cfd9e4"/>
         </g>
-        <g transform="translate(980,300)">
-          <path class="tail2" d="M40 330C95 320 115 255 82 228" stroke="#9aa3ab" stroke-width="26" stroke-linecap="round" fill="none"/>
-          <rect x="-72" y="180" width="144" height="190" rx="40" fill="#2f6db4"/>
-          <path d="M-72 214c0-34 34-42 72-42s72 8 72 42v24H-72z" fill="#f08a2e"/>
-          <rect x="-72" y="252" width="144" height="10" fill="#dfe6ec" opacity=".9"/><rect x="-72" y="300" width="144" height="10" fill="#dfe6ec" opacity=".9"/>
-          <path d="M-66 216c-28 30-28 68-6 88" stroke="#2f6db4" stroke-width="26" stroke-linecap="round" fill="none"/><circle cx="-68" cy="308" r="14" fill="#9aa3ab"/>
-          <g class="wave"><path d="M66 216c30-14 42-44 38-74" stroke="#2f6db4" stroke-width="26" stroke-linecap="round" fill="none"/><circle cx="102" cy="134" r="15" fill="#9aa3ab"/></g>
-          <rect x="-54" y="360" width="40" height="62" rx="14" fill="#245a97"/><rect x="14" y="360" width="40" height="62" rx="14" fill="#245a97"/>
-          <ellipse cx="-34" cy="426" rx="26" ry="12" fill="#9aa3ab"/><ellipse cx="34" cy="426" rx="26" ry="12" fill="#9aa3ab"/>
-          <g class="cat-bob2">
-            <path d="M-64 44C-70 16-40 10-30 30-40 34-52 38-64 44Z" fill="#8b949c"/><path d="M64 44C70 16 40 10 30 30 40 34 52 38 64 44Z" fill="#8b949c"/>
-            <circle cx="0" cy="110" r="74" fill="#9aa3ab"/><ellipse cx="0" cy="136" rx="38" ry="27" fill="#c6ccd2"/>
-            <g class="blink2"><circle cx="-26" cy="102" r="9" fill="#e5b53a"/><circle cx="26" cy="102" r="9" fill="#e5b53a"/><circle cx="-26" cy="102" r="4" fill="#2b2b2b"/><circle cx="26" cy="102" r="4" fill="#2b2b2b"/></g>
-            <path d="M-6 124h12l-6 8z" fill="#c96f6f"/><path d="M-6 136q6 8 12 0" stroke="#7d868e" stroke-width="3" fill="none"/>
-            <g stroke="#fff" stroke-width="3" opacity=".8"><path d="M-38 126L-82 120"/><path d="M-38 134L-82 138"/><path d="M38 126L82 120"/><path d="M38 134L82 138"/></g>
-          </g>
+        <g transform="translate(1050,620)">
+          <circle r="70" fill="#6cb52d"/><circle r="70" fill="none" stroke="#4e8f1e" stroke-width="6"/>
+          <path d="M-30 2l22 24 40-48" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
-      </g>
-    </svg>
-    <video id="hvA" class="hv-video" muted playsinline preload="auto" src="cats.mp4"></video>
-    <video id="hvB" class="hv-video" muted playsinline preload="auto" src="cats.mp4"></video>
-    <div class="hv-overlay"></div>
+        <g transform="rotate(-6 520 640)">
+          <rect x="400" y="580" width="240" height="150" rx="12" fill="#1260ae"/>
+          <rect x="420" y="605" width="120" height="16" rx="8" fill="#ffffff" opacity=".85"/>
+          <rect x="420" y="640" width="180" height="10" rx="5" fill="#ffffff" opacity=".5"/>
+          <rect x="420" y="662" width="150" height="10" rx="5" fill="#ffffff" opacity=".5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-overlay"></div>
   </div>
   <div class="container">
     <div class="hero-inner" data-reveal>
-      <svg class="hero-emblem" width="76" height="76" viewBox="0 0 48 48" aria-hidden="true">
-        <path fill="url(#lg1)" d="M24 2c1 6 4 9 7 13 3.5 4.6 6 8.6 6 13.5C37 36.5 31.2 42 24 42S11 36.5 11 28.5c0-4.9 2.5-8.9 6-13.5 3-4 6-7 7-13z"/>
-        <path fill="#fff" d="M33.9 24.6l-1.6-4.4c-.3-.8-1-1.2-1.8-1.2h-13c-.8 0-1.5.4-1.8 1.2l-1.6 4.4c-.7.2-1.1.8-1.1 1.5v4.4c0 .4.3.7.7.7h1.5c.4 0 .7-.3.7-.7v-1h16.2v1c0 .4.3.7.7.7h1.5c.4 0 .7-.3.7-.7v-4.4c0-.7-.4-1.3-1.1-1.5zm-15.2-4.2h10.6l1.2 3.4H17.5l1.2-3.4zm-.2 7.6c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm11 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
-      </svg>
+      <img class="hero-logo" src="logo.png" alt="" onerror="this.style.display='none';document.getElementById('heroLogoSvg').style.display='block';">
+      <svg id="heroLogoSvg" class="hero-logo-svg" viewBox="0 0 300 330" aria-hidden="true"><use href="#logoFull" width="300" height="330"/></svg>
       <span class="badge-city"><i></i> Стерлитамак · Республика Башкортостан</span>
       <h1>Регистрация <em>ГБО</em> и переоборудования ТС в ГИБДД</h1>
-      <p class="hero-sub">Все виды изменений, вносимых в конструкцию транспортного средства. <b>Полный пакет документов под ключ</b> — законно, безопасно, надёжно.</p>
+      <p class="hero-sub">Все виды изменений, вносимых в конструкцию транспортного средства. <b>Полный пакет документов для регистрации</b> — законно, безопасно, надёжно.</p>
       <div class="hero-actions">
         <a class="btn btn-green" href="#request" data-scroll>Получить консультацию</a>
         <a class="btn btn-ghost" href="#services" data-scroll>Наши услуги</a>
@@ -410,8 +406,8 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
         <a href="#request" data-scroll>Оставить заявку →</a>
       </article>
       <article class="srv" data-reveal>
-        <div class="srv-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l10 4.5-10 4.5L2 8.5z"/><path d="M6 10.8V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.2"/><path d="M22 8.5v5.5"/></svg></div>
-        <h3>Переоборудование в учебное ТС</h3><p>Комплектация и регистрация учебных автомобилей для автошкол: педали, знаки, дополнительное оборудование.</p>
+        <div class="srv-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 21 19.5H3Z"/><text x="12" y="17.4" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="currentColor" stroke="none">У</text></svg></div>
+        <h3>Переоборудование в учебное ТС</h3><p>Комплектация и регистрация учебных автомобилей для автошкол: знак «У», дополнительные педали и оборудование.</p>
         <a href="#request" data-scroll>Оставить заявку →</a>
       </article>
       <article class="srv" data-reveal>
@@ -433,16 +429,16 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     <div class="steps-wrap" data-reveal>
       <span class="overline">Прозрачный процесс</span>
       <h2 class="title">Порядок регистрации переоборудования</h2>
-      <p class="section-sub">Пять понятных этапов — мы сопровождаем вас на каждом и берём всю работу с документами на себя.</p>
+      <p class="section-sub">Пять понятных этапов. Все документы готовим мы и сопровождаем вас на каждом шаге, а владелец предоставляет автомобиль и оплачивает госпошлину.</p>
       <div class="steps">
         <div class="step" data-reveal><div class="step-num">1</div><span class="step-tag">Лаборатория</span><h3>Проверка возможности</h3><p>Предварительная техническая экспертиза: проверяем, допустимы ли изменения конструкции.</p></div>
-        <div class="step" data-reveal><div class="step-num">2</div><span class="step-tag">ГИБДД</span><h3>Разрешение</h3><p>Подаём заявление и получаем разрешение ГИБДД на внесение изменений в конструкцию.</p></div>
-        <div class="step" data-reveal><div class="step-num">3</div><span class="step-tag">Мастерская</span><h3>Работы и декларация</h3><p>Выполнение работ и оформление декларации о соответствии требованиям техрегламента.</p></div>
-        <div class="step" data-reveal><div class="step-num">4</div><span class="step-tag">Лаборатория</span><h3>Подтверждение</h3><p>Протокол технической экспертизы и подтверждение полного пакета документов.</p></div>
-        <div class="step" data-reveal><div class="step-num">5</div><span class="step-tag">ГИБДД</span><h3>Свидетельство</h3><p>Получение свидетельства о соответствии и внесение отметок в ПТС и СТС.</p></div>
+        <div class="step" data-reveal><div class="step-num">2</div><span class="step-tag">ГИБДД</span><h3>Разрешение</h3><p>Готовим заявление и получаем разрешение ГИБДД на внесение изменений в конструкцию.</p></div>
+        <div class="step" data-reveal><div class="step-num">3</div><span class="step-tag">Мастерская</span><h3>Работы и декларация</h3><p>Выполнение работ на автомобиле владельца и оформление декларации о соответствии техрегламенту.</p></div>
+        <div class="step" data-reveal><div class="step-num">4</div><span class="step-tag">Лаборатория</span><h3>Подтверждение</h3><p>Протокол технической экспертизы и подтверждение подготовленного пакета документов.</p></div>
+        <div class="step" data-reveal><div class="step-num">5</div><span class="step-tag">ГИБДД</span><h3>Свидетельство</h3><p>Инспектор выдаёт свидетельство о соответствии и вносит отметки в ПТС и СТС — мы сопровождаем вас до конца.</p></div>
       </div>
       <div class="steps-note">
-        <p>Не хотите разбираться в этапах сами? <b>Доверьте переоборудование профессионалам</b> — мы пройдём все шаги за вас.</p>
+        <p>Сэкономим ваше время на каждом этапе: <b>все документы готовим мы</b>. Автомобиль предоставляет владелец, госпошлина оплачивается отдельно.</p>
         <a class="btn btn-green" href="#request" data-scroll>Перезвоните мне</a>
       </div>
     </div>
@@ -454,11 +450,11 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     <div data-reveal>
       <span class="overline">Почему выбирают нас</span>
       <h2 class="title">Законно. Безопасно. Надёжно.</h2>
-      <p class="section-sub">Оформим все документы быстро и профессионально — без отказов и повторных визитов в ГИБДД.</p>
+      <p class="section-sub">Оформим документы быстро и профессионально — сведём к минимуму риск отказов и повторных визитов в ГИБДД.</p>
     </div>
     <div class="cards-4">
       <div class="why" data-reveal><div class="why-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Законно и без проблем с ГИБДД</h3><p>Работаем строго по требованиям ТР ТС 018/2011 — исключаем отказы и штрафы.</p></div>
-      <div class="why" data-reveal><div class="why-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l2 2 4-4"/></svg></div><h3>Полный пакет документов под ключ</h3><p>Декларации, протоколы, свидетельства — подготовим и оформим всё за вас.</p></div>
+      <div class="why" data-reveal><div class="why-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l2 2 4-4"/></svg></div><h3>Полный пакет документов</h3><p>Декларацию, протоколы и заключения готовим мы. Итоговое свидетельство о соответствии выдаёт инспектор ГИБДД — сопровождаем вас до его получения.</p></div>
       <div class="why" data-reveal><div class="why-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></div><h3>Профессионально, быстро, надёжно</h3><p>Многолетний опыт оформления переоборудований любых типов транспортных средств.</p></div>
       <div class="why" data-reveal><div class="why-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3.5 3 16.5 0 20-3-3.5-3-16.5 0-20z"/></svg></div><h3>Работаем по всей России</h3><p>Дистанционное сопровождение клиентов из любого региона Российской Федерации.</p></div>
     </div>
@@ -523,6 +519,7 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
       <div class="faq-item" data-reveal><button class="faq-q" type="button">Сколько времени занимает регистрация переоборудования?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>В среднем от 3 до 10 рабочих дней — зависит от вида изменений и готовности документов. Все этапы мы сопровождаем лично, поэтому задержек по нашей стороне не бывает.</p></div></div>
       <div class="faq-item" data-reveal><button class="faq-q" type="button">Можно ли зарегистрировать уже установленное ГБО?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>Да. Узаконим уже установленное оборудование: проведём экспертизу, подготовим документы, пройдём процедуру и получим свидетельство о соответствии с отметками в ПТС и СТС.</p></div></div>
       <div class="faq-item" data-reveal><button class="faq-q" type="button">Какие документы нужны для начала работы?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>Паспорт собственника, СТС и ПТС, документы на установленное оборудование (если есть). Точный список под вашу ситуацию озвучим на бесплатной консультации.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q" type="button">Что входит в вашу работу, а что — в мою?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>Мы готовим весь пакет документов: декларацию, протоколы и заключения, сопровождаем все этапы. От владельца требуется предоставить автомобиль для осмотров и оплатить госпошлину. Итоговое свидетельство выдаёт инспектор ГИБДД.</p></div></div>
       <div class="faq-item" data-reveal><button class="faq-q" type="button">Работаете ли вы за пределами Стерлитамака?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>Да, работаем по всей России: консультируем дистанционно, готовим документы онлайн и сопровождаем регистрацию в вашем регионе.</p></div></div>
       <div class="faq-item" data-reveal><button class="faq-q" type="button">Что грозит за езду с незарегистрированным ГБО?<span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a"><p>Штраф, предписание об устранении нарушения и риск запрета эксплуатации и снятия с учёта. Чтобы этого избежать, переоборудование нужно зарегистрировать — мы сделаем это под ключ.</p></div></div>
     </div>
@@ -560,7 +557,7 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     <div class="f-grid">
       <div class="f-logo">
         <a class="logo" href="#top" data-scroll>
-          <svg width="42" height="42" viewBox="0 0 48 48"><path fill="url(#lg1)" d="M24 2c1 6 4 9 7 13 3.5 4.6 6 8.6 6 13.5C37 36.5 31.2 42 24 42S11 36.5 11 28.5c0-4.9 2.5-8.9 6-13.5 3-4 6-7 7-13z"/></svg>
+          <svg width="44" height="44" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="118" fill="#fff"/><use href="#logoEmblem" width="240" height="240"/></svg>
           <span class="logo-txt">ГБО4.<span style="color:var(--green-light)">РФ</span></span>
         </a>
         <p>Регистрация ГБО и переоборудования ТС в ГИБДД в Стерлитамаке и по всей России. Законно. Безопасно. Надёжно.</p>
@@ -593,49 +590,10 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
 <script>
 (function(){
   'use strict';
-  /* ===== НАСТРОЙКИ ДОСТАВКИ ЗАЯВОК =====
-     SEND_TO_WHATSAPP: открыть WhatsApp клиента с готовым сообщением на ваш номер
-     SEND_TO_EMAIL:    дублировать заявку письмом на gbo.4str-servis@mail.ru (FormSubmit) */
+  /* ===== НАСТРОЙКИ ДОСТАВКИ ЗАЯВОК ===== */
   var PHONE_E164='79871334050';
   var SEND_TO_WHATSAPP=true;
   var SEND_TO_EMAIL=true;
-
-  /* ===== ВИДЕО-ФОН: бесшовный loop с перекрёстным затуханием ===== */
-  (function(){
-    var A=document.getElementById('hvA'),B=document.getElementById('hvB');
-    var wrap=document.querySelector('.hero-video');
-    if(!A||!B||!wrap)return;
-    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var FADE=1.2,ready=false,shown=false,visible=A,hidden=B;
-    function show(){if(shown)return;shown=true;A.style.opacity='1';wrap.classList.add('has-video');}
-    function startFirst(){
-      if(ready)return;ready=true;
-      var p=A.play();
-      if(p&&p.then){p.then(show).catch(function(){});}else{show();}
-    }
-    A.addEventListener('canplay',startFirst);
-    A.addEventListener('loadeddata',startFirst);
-    function kill(v){return function(){v.style.display='none';};}
-    A.addEventListener('error',kill(A));B.addEventListener('error',kill(B));
-    function onTime(v){return function(){
-      if(!shown||v!==visible||v.dataset.f)return;
-      var d=v.duration;
-      if(d&&v.currentTime>=d-FADE-0.05){
-        v.dataset.f='1';
-        hidden.currentTime=0;
-        var p=hidden.play();if(p&&p.catch)p.catch(function(){});
-        B.style.opacity=(hidden===B)?'1':'0';
-      }
-    };}
-    A.addEventListener('timeupdate',onTime(A));B.addEventListener('timeupdate',onTime(B));
-    function onEnd(v){return function(){
-      if(v!==visible)return;
-      v.pause();v.currentTime=0;
-      A.dataset.f='';B.dataset.f='';
-      var t=visible;visible=hidden;hidden=t;
-    };}
-    A.addEventListener('ended',onEnd(A));B.addEventListener('ended',onEnd(B));
-  })();
 
   /* ===== плавная прокрутка без смены hash ===== */
   var HEADER_OFFSET=88;
@@ -731,36 +689,28 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     submitBtn.classList.add('loading');submitBtn.disabled=true;submitBtn.textContent='Отправляем… ';
     var service=document.getElementById('service').value;
     var comment=document.getElementById('comment').value.trim();
-    /* 1) WhatsApp: готовое сообщение на ваш номер */
     var waText='Заявка с сайта ГБО4.РФ\nИмя: '+nameVal+'\nТелефон: '+phoneInput.value+'\nУслуга: '+service+(comment?('\nКомментарий: '+comment):'');
     var waUrl='https://wa.me/'+PHONE_E164+'?text='+encodeURIComponent(waText);
     document.getElementById('waAgain').href=waUrl;
     var waOpened=false;
-    if(SEND_TO_WHATSAPP){
-      var w=window.open(waUrl,'_blank');
-      waOpened=!!w;
-    }
-    /* 2) Дубль на почту (FormSubmit) */
+    if(SEND_TO_WHATSAPP){waOpened=!!window.open(waUrl,'_blank');}
     var payload={_subject:'Новая заявка с сайта ГБО4.РФ',name:nameVal,phone:phoneInput.value,service:service,comment:comment||'—'};
     var done=function(){
       if(finished)return;finished=true;
       form.style.display='none';
-      var ok=document.getElementById('formOk');
       if(!waOpened&&SEND_TO_WHATSAPP){
         document.getElementById('okText').textContent='Браузер заблокировал всплывающее окно — нажмите кнопку «Открыть WhatsApp ещё раз», чтобы отправить заявку, или позвоните нам.';
       }else if(!SEND_TO_WHATSAPP){
         document.getElementById('okText').textContent='Спасибо! Заявка отправлена. Мы перезвоним вам в ближайшее время и бесплатно проконсультируем.';
       }
-      ok.classList.add('show');
+      document.getElementById('formOk').classList.add('show');
     };
     if(SEND_TO_EMAIL){
       try{
         fetch('https://formsubmit.co/ajax/gbo.4str-servis@mail.ru',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(done,done);
         setTimeout(done,4000);
       }catch(err){done();}
-    }else{
-      setTimeout(done,600);
-    }
+    }else{setTimeout(done,600);}
   });
 
   /* ===== параллакс + прогресс ===== */
