@@ -76,6 +76,7 @@ body.menu-open .burger span::after{transform:rotate(-45deg);top:0}
 .hv-svg{width:100%;height:100%;transition:opacity .6s}
 .hv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;visibility:hidden}
 .hero-video.has-video .hv-video{visibility:visible}
+.hero-video.has-video #hvA{opacity:1}
 .hero-video.has-video .hv-svg{opacity:0}
 .hv-cam,.cat-bob,.cat-bob2,.blink,.blink2,.tail1,.tail2,.wave,.papers,.spark{transform-box:fill-box;transform-origin:center}
 .hv-cam{animation:hvCam 26s ease-in-out infinite alternate}
@@ -244,7 +245,6 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
 </head>
 <body>
 
-<!-- Иконки одним блоком (переиспользование через <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="maxg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#40c4f5"/><stop offset=".55" stop-color="#4f6df5"/><stop offset="1" stop-color="#8338f0"/></linearGradient>
 <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
@@ -297,9 +297,8 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
 
 <main id="top">
 <section class="hero">
-  <!-- ВИДЕО-ФОН: положите файл ролика рядом с сайтом под именем cats.mp4 —
-       он подхватится автоматически и будет зациклен с плавным перекрёстным затуханием.
-       Пока файла нет — работает бесшовная анимированная сцена с котами. -->
+  <!-- ВИДЕО-ФОН: файл cats.mp4 лежит рядом с index.html и зацикливается с плавным стыком.
+       Пока видео не загрузилось — работает анимированная сцена с котами. -->
   <div class="hero-video" aria-hidden="true">
     <svg class="hv-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
       <g class="hv-cam">
@@ -358,8 +357,8 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
         </g>
       </g>
     </svg>
-    <video id="hvA" class="hv-video" muted playsinline preload="metadata" src="cats.mp4"></video>
-    <video id="hvB" class="hv-video" muted playsinline preload="metadata" src="cats.mp4"></video>
+    <video id="hvA" class="hv-video" muted playsinline preload="auto" src="cats.mp4"></video>
+    <video id="hvB" class="hv-video" muted playsinline preload="auto" src="cats.mp4"></video>
     <div class="hv-overlay"></div>
   </div>
   <div class="container">
@@ -603,17 +602,24 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     var wrap=document.querySelector('.hero-video');
     if(!A||!B||!wrap)return;
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var FADE=1.2,ready=false,visible=A,hidden=B;
-    function fail(v){return function(){v.style.display='none';};}
-    A.addEventListener('error',fail(A));B.addEventListener('error',fail(B));
-    function canPlay(v){return function(){
-      if(ready)return;ready=true;wrap.classList.add('has-video');
-      var p=A.play();if(p&&p.catch)p.catch(function(){});
-    };}
-    A.addEventListener('canplay',canPlay(A),{once:true});
-    B.addEventListener('canplay',canPlay(B),{once:true});
+    var FADE=1.2,ready=false,shown=false,visible=A,hidden=B;
+    function show(){
+      if(shown)return;shown=true;
+      A.style.opacity='1';
+      wrap.classList.add('has-video');
+    }
+    function startFirst(){
+      if(ready)return;ready=true;
+      var p=A.play();
+      if(p&&p.then){p.then(show).catch(function(){});}else{show();}
+    }
+    A.addEventListener('canplay',startFirst);
+    A.addEventListener('loadeddata',startFirst);
+    B.addEventListener('canplay',function(){},{once:true});
+    function kill(v){return function(){v.style.display='none';};}
+    A.addEventListener('error',kill(A));B.addEventListener('error',kill(B));
     function onTime(v){return function(){
-      if(!ready||v!==visible||v.dataset.f)return;
+      if(!shown||v!==visible||v.dataset.f)return;
       var d=v.duration;
       if(d&&v.currentTime>=d-FADE-0.05){
         v.dataset.f='1';
@@ -625,7 +631,8 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     A.addEventListener('timeupdate',onTime(A));B.addEventListener('timeupdate',onTime(B));
     function onEnd(v){return function(){
       if(v!==visible)return;
-      v.pause();v.currentTime=0;v.dataset.f='';visible.dataset.f='';hidden.dataset.f='';
+      v.pause();v.currentTime=0;
+      A.dataset.f='';B.dataset.f='';
       var t=visible;visible=hidden;hidden=t;
     };}
     A.addEventListener('ended',onEnd(A));B.addEventListener('ended',onEnd(B));
