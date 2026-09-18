@@ -56,6 +56,7 @@ header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(13,60
 .logo-txt{font-size:26px;font-weight:700;color:var(--blue-800);line-height:1}
 .logo-txt span{color:var(--green-dark)}
 .logo-sub{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.footer-logo{height:60px;width:auto;background:#fff;border-radius:14px;padding:6px 12px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .menu{display:flex;gap:26px;font-weight:700;font-size:14.5px;color:var(--ink)}
 .menu a{position:relative;padding:6px 0}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--green);transition:.25s;border-radius:2px}
@@ -229,12 +230,13 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
   .steps-wrap{padding:44px 24px}.form-row{grid-template-columns:1fr}.form-card{padding:26px}
   .f-grid{grid-template-columns:1fr}.nav .btn{padding:10px 14px;font-size:13px}
   .logo-img{height:44px}.logo-txt{font-size:22px}.hero-logo{height:104px}.hero-logo-svg{height:118px}
+  .footer-logo{height:48px}
 }
 </style>
 </head>
 <body>
 
-<!-- ЛОГОТИП: векторная копия фирменного знака с фото (пламя + машина + пистолет + надпись).
+<!-- ЛОГОТИП: векторная копия фирменного знака (пламя + машина + пистолет + надпись).
      Если рядом с index.html лежит фото logo.png — оно автоматически заменит вектор. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="maxg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#40c4f5"/><stop offset=".55" stop-color="#4f6df5"/><stop offset="1" stop-color="#8338f0"/></linearGradient>
@@ -557,8 +559,10 @@ footer{background:var(--blue-900);color:#bcd3ea;padding:52px 0 0}
     <div class="f-grid">
       <div class="f-logo">
         <a class="logo" href="#top" data-scroll>
-          <svg width="44" height="44" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="118" fill="#fff"/><use href="#logoEmblem" width="240" height="240"/></svg>
-          <span class="logo-txt">ГБО4.<span style="color:var(--green-light)">РФ</span></span>
+          <!-- Ваш логотип logo.png на белой подложке; если файла нет — запасной знак -->
+          <img class="footer-logo" src="logo.png" alt="ГБО4.РФ" onerror="this.style.display='none';document.getElementById('footerEmblem').style.display='block';" onload="var t=document.getElementById('footerText');if(t)t.style.display='none';">
+          <svg id="footerEmblem" style="display:none" width="44" height="44" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="118" fill="#fff"/><use href="#logoEmblem" width="240" height="240"/></svg>
+          <span id="footerText" class="logo-txt">ГБО4.<span style="color:var(--green-light)">РФ</span></span>
         </a>
         <p>Регистрация ГБО и переоборудования ТС в ГИБДД в Стерлитамаке и по всей России. Законно. Безопасно. Надёжно.</p>
       </div>
